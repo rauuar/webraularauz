@@ -139,9 +139,9 @@ img.bloque, video.bloque {
 }
 
 /* Encuadres de las fotos de EME (50% es centrado; más % sube el contenido) */
-img[src='eme2.png'] { object-position: 50% 57%; }
-video[src='eme4.mov'] { object-position: 50% 42%; }
-img[src='eme6.png'] { object-position: 50% 42%; }
+img[src='eme2.jpg'] { object-position: 50% 57%; }
+video[src='eme4.mp4'] { object-position: 50% 42%; }
+img[src='eme6.jpg'] { object-position: 50% 42%; }
 
 /* Ajustes solo para el reel de Bount */
 video.reel {
