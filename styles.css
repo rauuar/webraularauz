@@ -126,8 +126,6 @@ nav {
 }
 
 /* Formato de post vertical de Instagram (4:5) */
-.hero { aspect-ratio: 4 / 5; }
-
 .proyecto .bloque { aspect-ratio: 4 / 5; }
 
 /* Fotos y videos reales: mismo marco 4:5, recortan para llenar.
@@ -174,6 +172,9 @@ video.reel {
   border-top: 2px solid var(--negro);
   padding-top: 4px; /* 7 ÷ φ */
 }
+
+/* El primer proyecto más pegado a la sección de info */
+.info + .proyecto { margin-top: var(--sp-0); }
 
 .proyecto .titulos {
   display: flex;
