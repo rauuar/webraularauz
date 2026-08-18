@@ -196,7 +196,7 @@ video.reel {
 /* ---------- Proyectos ---------- */
 /* Separador pegado al título: la línea abre cada proyecto */
 .proyecto {
-  margin-top: var(--sp-5);
+  margin-top: var(--sp-4);
   border-top: 2px solid var(--negro);
   padding-top: 4px; /* 7 ÷ φ */
 }
