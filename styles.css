@@ -177,7 +177,7 @@ video.reel {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: var(--sp-0);
+  gap: 5px;
   z-index: 2;
   pointer-events: none;
 }
