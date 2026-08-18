@@ -141,10 +141,20 @@
       const items = Array.from(media.children);
       let i = 0;
       items[i].classList.add('activo');
-      media.addEventListener('click', () => {
+      const ir = (delta) => {
         items[i].classList.remove('activo');
-        i = (i + 1) % items.length;
+        i = (i + delta + items.length) % items.length;
         items[i].classList.add('activo');
+      };
+      media.addEventListener('click', () => ir(1));
+      // Flechitas para móvil (en desktop se ocultan por CSS)
+      [['atras', 'Anterior', -1, '←'], ['adelante', 'Siguiente', 1, '→']].forEach(([cls, label, delta, char]) => {
+        const b = document.createElement('button');
+        b.className = 'flecha ' + cls;
+        b.setAttribute('aria-label', label);
+        b.textContent = char;
+        b.addEventListener('click', (e) => { e.stopPropagation(); ir(delta); });
+        media.appendChild(b);
       });
     });
 
