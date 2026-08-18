@@ -128,6 +128,9 @@ nav {
 /* Formato de post vertical de Instagram (4:5) */
 .proyecto .bloque { aspect-ratio: 4 / 5; }
 
+/* Marco horizontal (4:3) para proyectos de video widescreen */
+.proyecto .bloque.horizontal { aspect-ratio: 4 / 3; }
+
 /* Fotos y videos reales: mismo marco 4:5, recortan para llenar.
    Sin el fondo rojo: evita la línea que se asoma en el borde del video */
 img.bloque, video.bloque {
