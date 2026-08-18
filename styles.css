@@ -159,7 +159,7 @@ video.reel {
   cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 16 16'><path d='M4.65 2.9 L12.57 7.22 Q14 8 12.57 8.78 L4.65 13.1 Q3 14 3 12.2 L3 3.8 Q3 2 4.65 2.9 Z' fill='%23fff' stroke='%23000' stroke-width='1.5' stroke-linejoin='round'/></svg>") 10 6, e-resize;
 }
 
-.media > *:not(.flecha) {
+.media > *:not(.puntos) {
   grid-area: 1 / 1;
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -168,47 +168,25 @@ video.reel {
 
 .media > .activo { opacity: 1; }
 
-/* Flechitas del carrusel (móvil): cuadritos rojos de la marca, mínimos */
+/* Circulitos tipo carrusel de IG, integrados abajo dentro del marco */
 .media { position: relative; }
 
-.media .flecha {
+.puntos {
   position: absolute;
   bottom: var(--sp-1);
-  width: 29px;
-  height: 29px;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--rojo);
-  color: #ffffff;
-  border: 0;
-  padding: 0;
-  font-family: inherit;
-  font-size: var(--fs-label);
-  font-weight: 700;
-  letter-spacing: 0;
-  line-height: 1;
-  cursor: pointer;
-  z-index: 2;
-}
-
-.media .flecha.atras { right: calc(var(--sp-1) + 31px); }
-
-.media .flecha.adelante { right: var(--sp-1); }
-
-/* Circulitos tipo carrusel de IG, abajito del marco */
-.puntos {
-  display: flex;
-  justify-content: center;
   gap: var(--sp-0);
-  margin-top: var(--sp-1);
+  z-index: 2;
+  pointer-events: none;
 }
 
 .puntos span {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #d9d9d9;
+  background: rgba(255, 255, 255, 0.55);
 }
 
 .puntos span.activo { background: var(--rojo); }
@@ -306,8 +284,7 @@ footer .estampilla {
 @media (min-width: 600px) {
   body { zoom: 1.15; }
 
-  /* En desktop el cursor de flecha ya indica el click: fuera botones y puntos */
-  .media .flecha { display: none; }
+  /* En desktop el cursor de flecha ya indica el click: fuera puntos */
   .puntos { display: none; }
 
   .pagina { max-width: none; }

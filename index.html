@@ -150,7 +150,7 @@
         puntos.appendChild(d);
         return d;
       });
-      media.after(puntos);
+      media.appendChild(puntos);
       const ir = (delta) => {
         items[i].classList.remove('activo');
         dots[i].classList.remove('activo');
@@ -159,15 +159,6 @@
         dots[i].classList.add('activo');
       };
       media.addEventListener('click', () => ir(1));
-      // Flechitas para móvil (en desktop se ocultan por CSS)
-      [['atras', 'Anterior', -1, '←'], ['adelante', 'Siguiente', 1, '→']].forEach(([cls, label, delta, char]) => {
-        const b = document.createElement('button');
-        b.className = 'flecha ' + cls;
-        b.setAttribute('aria-label', label);
-        b.textContent = char;
-        b.addEventListener('click', (e) => { e.stopPropagation(); ir(delta); });
-        media.appendChild(b);
-      });
     });
 
     const observados = document.querySelectorAll('.proyecto > .bloque, .proyecto > .media');
