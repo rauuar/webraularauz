@@ -141,10 +141,22 @@
       const items = Array.from(media.children);
       let i = 0;
       items[i].classList.add('activo');
+      // Circulitos tipo IG para saber cuántos medios hay
+      const puntos = document.createElement('div');
+      puntos.className = 'puntos';
+      const dots = items.map((_, idx) => {
+        const d = document.createElement('span');
+        if (idx === 0) { d.classList.add('activo'); }
+        puntos.appendChild(d);
+        return d;
+      });
+      media.after(puntos);
       const ir = (delta) => {
         items[i].classList.remove('activo');
+        dots[i].classList.remove('activo');
         i = (i + delta + items.length) % items.length;
         items[i].classList.add('activo');
+        dots[i].classList.add('activo');
       };
       media.addEventListener('click', () => ir(1));
       // Flechitas para móvil (en desktop se ocultan por CSS)
