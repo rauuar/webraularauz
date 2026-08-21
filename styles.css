@@ -174,8 +174,7 @@ video.reel {
 .puntos {
   position: absolute;
   bottom: var(--sp-1);
-  left: 50%;
-  transform: translateX(-50%);
+  left: var(--sp-1);
   display: flex;
   gap: 5px;
   z-index: 2;
