@@ -128,6 +128,12 @@ nav {
 /* Formato de post vertical de Instagram (4:5) */
 .proyecto .bloque { aspect-ratio: 4 / 5; }
 
+/* Marco vertical de cartel (2:3) para la sección de posters */
+.proyecto .bloque.cartel { aspect-ratio: 2 / 3; }
+
+/* En posters la descripción va arriba de las imágenes */
+.posters .descripcion { margin-bottom: var(--sp-2); }
+
 /* Marco horizontal (16:9) para proyectos de video widescreen */
 .proyecto .bloque.horizontal { aspect-ratio: 16 / 9; }
 
